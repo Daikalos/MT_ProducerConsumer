@@ -53,7 +53,7 @@ namespace Multithreading_03
                     myStatusLabel.InvokeIfRequired(() => { myStatusLabel.Text = "Waiting"; });
 
                     mySharedBuffer.FullSemaphore.Wait();
-                    FoodItem item = mySharedBuffer.GetLast();
+                    FoodItem item = mySharedBuffer.GetFirst();
                     mySharedBuffer.EmptySemaphore.Release();
                     mySharedBuffer.Consume(item);
 

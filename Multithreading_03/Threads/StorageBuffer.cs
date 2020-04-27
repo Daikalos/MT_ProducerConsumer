@@ -42,7 +42,7 @@ namespace Multithreading_03
             }
         }
 
-        public FoodItem GetLast()
+        public FoodItem GetFirst()
         {
             return myStorageBuffer.First();
         }
