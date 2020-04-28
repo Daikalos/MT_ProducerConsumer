@@ -27,7 +27,6 @@ namespace Multithreading_03
                 myStatusLabel.InvokeIfRequired(() => { myStatusLabel.Text = "Waiting"; });
 
                 FoodItem itemProduced = MainForm.Form.ReturnRandomFood();
-
                 mySharedBuffer.EmptySemaphore.Wait();
                 mySharedBuffer.Add(itemProduced);
                 mySharedBuffer.FullSemaphore.Release();

@@ -44,6 +44,7 @@ namespace Multithreading_03
         {
             while (IsRunning)
             {
+                //As long as limit isn't reached, continue loading items into stock
                 if (!myLimitReached)
                 {
                     myStatusLabel.InvokeIfRequired(() => { myStatusLabel.Text = "Loading"; });
@@ -66,9 +67,9 @@ namespace Multithreading_03
 
                     if (totalItems + 1 > MaxItems || totalWeight + item.Weight > MaxWeight || totalVolume + item.Volume > MaxVolume)
                     {
+                        //If stock exceeds any limit, check if to empty stock or stop
                         myLimitReached = true;
                     }
-                    
                 }
                 else
                 {
@@ -78,12 +79,14 @@ namespace Multithreading_03
 
                         Thread.Sleep(myContinueLoadWait);
 
+                        //Clear and reset
                         myLimitReached = false;
                         myFoodStock.Clear();
                         myStockList.InvokeIfRequired(() => { myStockList.Items.Clear(); });
                     }
                     else
                     {
+                        //If consumer has not been marked to continue loading, stop loading
                         IsRunning = false;
                     }
                 }

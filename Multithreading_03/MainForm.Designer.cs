@@ -88,9 +88,9 @@
             this.ConsumerStop2 = new System.Windows.Forms.Button();
             this.ConsumerStart2 = new System.Windows.Forms.Button();
             this.StorageBox = new System.Windows.Forms.GroupBox();
+            this.StorageCapacity = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.ProgressItems = new System.Windows.Forms.ProgressBar();
-            this.StorageCapacity = new System.Windows.Forms.Label();
             this.ProducerBox1.SuspendLayout();
             this.ProducerBox2.SuspendLayout();
             this.ProducerBox3.SuspendLayout();
@@ -237,7 +237,7 @@
             this.ProducerBox3.Location = new System.Drawing.Point(9, 293);
             this.ProducerBox3.Margin = new System.Windows.Forms.Padding(3, 24, 3, 3);
             this.ProducerBox3.Name = "ProducerBox3";
-            this.ProducerBox3.Size = new System.Drawing.Size(274, 100);
+            this.ProducerBox3.Size = new System.Drawing.Size(268, 100);
             this.ProducerBox3.TabIndex = 3;
             this.ProducerBox3.TabStop = false;
             this.ProducerBox3.Text = "Producer: AxFood";
@@ -325,10 +325,10 @@
             this.ConsumerBox3.Controls.Add(this.ConsumerStop3);
             this.ConsumerBox3.Controls.Add(this.ConsumerStart3);
             this.ConsumerBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConsumerBox3.Location = new System.Drawing.Point(15, 293);
+            this.ConsumerBox3.Location = new System.Drawing.Point(9, 293);
             this.ConsumerBox3.Margin = new System.Windows.Forms.Padding(3, 24, 3, 3);
             this.ConsumerBox3.Name = "ConsumerBox3";
-            this.ConsumerBox3.Size = new System.Drawing.Size(453, 100);
+            this.ConsumerBox3.Size = new System.Drawing.Size(459, 100);
             this.ConsumerBox3.TabIndex = 3;
             this.ConsumerBox3.TabStop = false;
             this.ConsumerBox3.Text = "Consumer: CITY GROSS";
@@ -337,9 +337,9 @@
             // 
             this.ConsumerList3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConsumerList3.FormattingEnabled = true;
-            this.ConsumerList3.Location = new System.Drawing.Point(327, 19);
+            this.ConsumerList3.Location = new System.Drawing.Point(333, 19);
             this.ConsumerList3.Name = "ConsumerList3";
-            this.ConsumerList3.Size = new System.Drawing.Size(120, 56);
+            this.ConsumerList3.Size = new System.Drawing.Size(114, 69);
             this.ConsumerList3.TabIndex = 13;
             // 
             // groupBox6
@@ -351,7 +351,7 @@
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(6, 21);
+            this.groupBox6.Location = new System.Drawing.Point(12, 21);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(98, 73);
             this.groupBox6.TabIndex = 10;
@@ -421,9 +421,9 @@
             this.ConsumerStatus3.Location = new System.Drawing.Point(164, 21);
             this.ConsumerStatus3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.ConsumerStatus3.Name = "ConsumerStatus3";
-            this.ConsumerStatus3.Size = new System.Drawing.Size(30, 16);
+            this.ConsumerStatus3.Size = new System.Drawing.Size(60, 16);
             this.ConsumerStatus3.TabIndex = 12;
-            this.ConsumerStatus3.Text = "Idle";
+            this.ConsumerStatus3.Text = "Stopped";
             // 
             // label3
             // 
@@ -496,7 +496,7 @@
             this.ConsumerList1.FormattingEnabled = true;
             this.ConsumerList1.Location = new System.Drawing.Point(333, 19);
             this.ConsumerList1.Name = "ConsumerList1";
-            this.ConsumerList1.Size = new System.Drawing.Size(120, 56);
+            this.ConsumerList1.Size = new System.Drawing.Size(120, 69);
             this.ConsumerList1.TabIndex = 11;
             // 
             // ConsumerStatus1
@@ -506,9 +506,9 @@
             this.ConsumerStatus1.Location = new System.Drawing.Point(170, 21);
             this.ConsumerStatus1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.ConsumerStatus1.Name = "ConsumerStatus1";
-            this.ConsumerStatus1.Size = new System.Drawing.Size(30, 16);
+            this.ConsumerStatus1.Size = new System.Drawing.Size(60, 16);
             this.ConsumerStatus1.TabIndex = 10;
-            this.ConsumerStatus1.Text = "Idle";
+            this.ConsumerStatus1.Text = "Stopped";
             // 
             // groupBox1
             // 
@@ -652,7 +652,7 @@
             this.ConsumerList2.FormattingEnabled = true;
             this.ConsumerList2.Location = new System.Drawing.Point(333, 19);
             this.ConsumerList2.Name = "ConsumerList2";
-            this.ConsumerList2.Size = new System.Drawing.Size(120, 56);
+            this.ConsumerList2.Size = new System.Drawing.Size(120, 69);
             this.ConsumerList2.TabIndex = 12;
             // 
             // groupBox5
@@ -734,9 +734,9 @@
             this.ConsumerStatus2.Location = new System.Drawing.Point(170, 21);
             this.ConsumerStatus2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.ConsumerStatus2.Name = "ConsumerStatus2";
-            this.ConsumerStatus2.Size = new System.Drawing.Size(30, 16);
+            this.ConsumerStatus2.Size = new System.Drawing.Size(60, 16);
             this.ConsumerStatus2.TabIndex = 11;
-            this.ConsumerStatus2.Text = "Idle";
+            this.ConsumerStatus2.Text = "Stopped";
             // 
             // label2
             // 
@@ -797,6 +797,17 @@
             this.StorageBox.TabStop = false;
             this.StorageBox.Text = "Storage";
             // 
+            // StorageCapacity
+            // 
+            this.StorageCapacity.AutoSize = true;
+            this.StorageCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StorageCapacity.Location = new System.Drawing.Point(166, 35);
+            this.StorageCapacity.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.StorageCapacity.Name = "StorageCapacity";
+            this.StorageCapacity.Size = new System.Drawing.Size(16, 18);
+            this.StorageCapacity.TabIndex = 3;
+            this.StorageCapacity.Text = "0";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -815,17 +826,6 @@
             this.ProgressItems.Size = new System.Drawing.Size(542, 23);
             this.ProgressItems.Step = 0;
             this.ProgressItems.TabIndex = 2;
-            // 
-            // StorageCapacity
-            // 
-            this.StorageCapacity.AutoSize = true;
-            this.StorageCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StorageCapacity.Location = new System.Drawing.Point(166, 35);
-            this.StorageCapacity.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.StorageCapacity.Name = "StorageCapacity";
-            this.StorageCapacity.Size = new System.Drawing.Size(16, 18);
-            this.StorageCapacity.TabIndex = 3;
-            this.StorageCapacity.Text = "0";
             // 
             // MainForm
             // 

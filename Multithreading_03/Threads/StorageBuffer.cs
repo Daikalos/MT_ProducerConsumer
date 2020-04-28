@@ -6,10 +6,14 @@ namespace Multithreading_03
 {
     class StorageBuffer
     {
+        //Queue the items are placed into and removed out of
         private readonly List<FoodItem> myStorageBuffer;
+
+        //Simple semaphore
         private readonly SemaphoreSlim mySemaphoreFull;
         private readonly SemaphoreSlim mySemaphoreEmpty;
 
+        //Lock methods where multiple threads will enter a critical section
         private readonly object myLockObject1 = new object();
         private readonly object myLockObject2 = new object();
 
@@ -30,6 +34,9 @@ namespace Multithreading_03
             mySemaphoreEmpty = new SemaphoreSlim(myMaxSize, myMaxSize);   
         }
 
+        /// <summary>
+        /// Add an item to the buffer
+        /// </summary>
         public void Add(FoodItem item)
         {
             lock (myLockObject1)
@@ -42,11 +49,17 @@ namespace Multithreading_03
             }
         }
 
+        /// <summary>
+        /// Get the oldest placed item in the list
+        /// </summary>
         public FoodItem GetFirst()
         {
             return myStorageBuffer.First();
         }
 
+        /// <summary>
+        /// Remove the item from the buffer
+        /// </summary>
         public void Consume(FoodItem item)
         {
             lock (myLockObject2)

@@ -7,11 +7,17 @@ namespace Multithreading_03
 {
     public partial class MainForm : Form
     {
+        //Use Dictionary to allow a more dynamic and easy identification of each object
         private readonly Dictionary<string, Producer> myProducers;
         private readonly Dictionary<string, Consumer> myConsumers;
+
+        //Create storage buffer which is shared between producers and consumers
         private readonly StorageBuffer myStorageBuffer;
+
+        //List the producers access to generate a random food item
         private List<FoodItem> myFoodItems;
 
+        //Simplification to consistently access right producer and consumer without letter mismatch error
         private string myProducerName1;
         private string myProducerName2;
         private string myProducerName3;
@@ -35,6 +41,7 @@ namespace Multithreading_03
 
             myStorageBuffer = new StorageBuffer();
 
+            //Name identifying each object in dictionary
             myProducerName1 = "Scan";
             myProducerName2 = "Arla";
             myProducerName3 = "AxFood";
@@ -43,22 +50,23 @@ namespace Multithreading_03
             myConsumerName2 = "COOP";
             myConsumerName3 = "CITY GROSS";
 
+            //Create each producer and add to dictionary
             myProducers.Add(myProducerName1, new Producer(myStorageBuffer, ProducerStatus1, 1500));
-            myProducers.Add(myProducerName2, new Producer(myStorageBuffer, ProducerStatus2, 3600));
+            myProducers.Add(myProducerName2, new Producer(myStorageBuffer, ProducerStatus2, 1200));
             myProducers.Add(myProducerName3, new Producer(myStorageBuffer, ProducerStatus3, 2500));
 
+            //Create each consumer and add to dictionary
             myConsumers.Add(myConsumerName1, new Consumer(
                 myStorageBuffer, ConsumerList1, ConsumerStatus1, 
                 1000, 15, 27.00f, 12.50f));
-
             myConsumers.Add(myConsumerName2, new Consumer(
                 myStorageBuffer, ConsumerList2, ConsumerStatus2, 
                 500, 12, 31.50f, 10.20f));
-
             myConsumers.Add(myConsumerName3, new Consumer(
                 myStorageBuffer, ConsumerList3, ConsumerStatus3,
                 600, 19, 22.30f, 17.00f));
 
+            //Update GUI after new values given to objects
             StorageCapacity.Text = "0 / " + myStorageBuffer.MaxSize.ToString();
 
             ConsumerItems1.Text = myConsumers[myConsumerName1].MaxItems.ToString();
@@ -80,7 +88,7 @@ namespace Multithreading_03
 
             myFoodItems.Add(new FoodItem("Milk", 1.1f, 0.5f));
             myFoodItems.Add(new FoodItem("Cream", 0.6f, 0.1f));
-            myFoodItems.Add(new FoodItem("Youghurt", 1.1f, 0.5f));
+            myFoodItems.Add(new FoodItem("Yoghurt", 1.1f, 0.5f));
             myFoodItems.Add(new FoodItem("Butter", 2.24f, 0.66f));
             myFoodItems.Add(new FoodItem("Flower", 3.4f, 1.2f));
             myFoodItems.Add(new FoodItem("Sugar", 3.7f, 1.8f));
